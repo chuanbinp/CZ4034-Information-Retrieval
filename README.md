@@ -1,7 +1,7 @@
 # CZ4034 Information Retrieval
 
 ## Quick Start  
-1. Obtain your twitter api keys and fill in the key.csv file.  
+1. Obtain your twitter api keys from *https://developer.twitter.com/en* and fill in the key.csv file.  
 ```
 access_key,  <your access key>
 access_secret,  <your access secret>
@@ -40,4 +40,4 @@ And so when there is a new tweet, it will:
 a. Add that tweet to our db, then  
 b. Delete the oldest tweet based on tweetcreatedts  
   
-Therefore, we will always maintain a dynamic database of size 10,000 documents  
+Therefore, we will always maintain a dynamic database of size 10,000 documents.
