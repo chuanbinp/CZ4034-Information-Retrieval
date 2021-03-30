@@ -24,12 +24,12 @@ solr stop -all
 ```
   
 3. Start listening for new tweets!  
-Since the solr has already been pre-populated, we can just run the `twitter_stream_to_db.py` script.  
-This allows us to listen for new tweets from the 5 chosen accounts and update our db instantly so that our **DB is in REALTIME**.
 ```
 python twitter_stream_to_db.py
 ```
-
+Since the solr has already been pre-populated, we can just run the `twitter_stream_to_db.py` script.  
+This allows us to listen for new tweets from the 5 chosen accounts and update our db instantly so that our **DB is in REALTIME**.  
+  
 4. Everything is running now, have fun :)
   
 ## Here are the functions of the 3 files:
