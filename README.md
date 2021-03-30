@@ -35,7 +35,7 @@ Output file will follow the naming convention:
 Pre-populate our solr non-SQL database with our 10k data. Change the variable `CSV_FILEPATH in line 48` to the new file name.  
   
 ### twitter_stream_to_db.py
-Running this script will allow us to listen to the above-mentioned 5 twitter pages so that our DB is in REALTIME.  
+Running this script will allow us to listen to the above-mentioned 5 twitter pages so that our **DB is in REALTIME**.  
 And so when there is a new tweet, it will:  
 a. Add that tweet to our db, then  
 b. Delete the oldest tweet based on tweetcreatedts  
