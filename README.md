@@ -22,7 +22,16 @@ To stop,
 cd \solr-8.8.1\bin  
 solr stop -all
 ```
+  
+3. Start listening for new tweets!  
+Since the solr has already been pre-populated, we can just run the `twitter_stream_to_db.py` script.  
+This allows us to listen for new tweets from the 5 chosen accounts and update our db instantly so that our **DB is in REALTIME**.
+```
+python twitter_stream_to_db.py
+```
 
+4. Everything is running now, have fun :)
+  
 ## Here are the functions of the 3 files:
 ### twitter_scraping.py
 Scrape 2000 documents of data from each of our designated 5 sources to come up with a total of 10,000 documents.  
