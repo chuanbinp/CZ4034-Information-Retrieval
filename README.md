@@ -1,7 +1,12 @@
 # CZ4034 Information Retrieval
 
 ## Quick Start  
-1. Obtain your twitter api keys from *https://developer.twitter.com/en* and fill in the key.csv file.  
+1. Install dependencies  
+```
+pip install requirements.txt
+```
+  
+2. Obtain your twitter api keys from *https://developer.twitter.com/en* and fill in the key.csv file.  
 ```
 access_key,  <your access key>
 access_secret,  <your access secret>
@@ -9,7 +14,7 @@ consumer_key,  <your consumer key>
 consumer_secret,  <your consumer secret>
 ```  
   
-2. Run SOLR on your local machine  
+3. Run SOLR on your local machine  
 ```
 cd \solr-8.8.1\bin  
 solr start -c -p 8983 -s ../example/cloud/node1/solr
@@ -23,14 +28,14 @@ cd \solr-8.8.1\bin
 solr stop -all
 ```
   
-3. Start listening for new tweets!  
+4. Start listening for new tweets!  
 ```
 python twitter_stream_to_db.py
 ```
 Since the solr has already been pre-populated, we can just run the `twitter_stream_to_db.py` script.  
 This allows us to listen for new tweets from the 5 chosen accounts and update our db instantly so that our **DB is in REALTIME**.  
   
-4. Everything is running now, have fun :)
+5. Everything is running now, have fun :)
   
 ## Here are the functions of the 3 files:
 ### twitter_scraping.py
