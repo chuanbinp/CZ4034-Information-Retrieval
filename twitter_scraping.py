@@ -92,7 +92,7 @@ db_tweets = pd.DataFrame(columns = ['username', 'userdesc', 'userurl', 'userpic'
                                     'userfollowers', 'usertotaltweets', 'usercreatedts', 'tweetid', 'tweetcreatedts',
                                    'tweetretweetcount', 'tweetfavcount', 'tweeturls', 'tweethashtags', 'tweetmentions',
                                    'tweettext', 'tweettextcleaned'])
-usernames = ['CNBC', 'WSJmarkets', 'nytimesbusiness', 'LizAnnSonders', 'FinancialNews']
+usernames = ['EliteOptions2', 'WarlusTrades', 'canuck2usa', 'OnlyGreenTrades', 'Ultra_Calls', 'MarketBeatCom', 'stockstobuy', 'TickerReport', 'AmericanBanking','SeekingAlpha', 'MarketRebels', 'TradeOnTheWire1']
 count = 2000
 db = db_tweets
 noTweets = 0

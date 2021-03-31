@@ -45,7 +45,7 @@ def getAllDataDesc():
     return results    
 
 #Define input file name
-CSV_FILEPATH = 'news_20210330_220243.csv'
+CSV_FILEPATH = 'news_20210331_232029.csv'
 
 #Connect to SOLR
 solr = pysolr.Solr('http://localhost:8983/solr/tweets/', always_commit=True)
