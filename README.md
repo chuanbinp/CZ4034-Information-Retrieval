@@ -3,7 +3,7 @@
 ## Quick Start  
 1. Install dependencies  
 ```
-pip install requirements.txt
+pip install -r requirements.txt
 ```
   
 2. Obtain your twitter api keys from *https://developer.twitter.com/en* and fill in the key.csv file.  
