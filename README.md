@@ -33,14 +33,14 @@ solr stop -all
 python twitter_stream_to_db.py
 ```
 Since the solr has already been pre-populated, we can just run the `twitter_stream_to_db.py` script.  
-This allows us to listen for new tweets from the 5 chosen accounts and update our db instantly so that our **DB is in REALTIME**.  
+This allows us to listen for new tweets from the 12 chosen accounts and update our db instantly so that our **DB is in REALTIME**.  
   
 5. Everything is running now, have fun :)
   
 ## Here are the functions of the 3 files:
 ### twitter_scraping.py
-Scrape 2000 documents of data from each of our designated 5 sources to come up with a total of 10,000 documents.  
-`['CNBC', 'WSJmarkets', 'nytimesbusiness', 'LizAnnSonders', 'FinancialNews']`
+Scrape 2000 documents of data from each of our designated 12 sources to come up with a total of 23,326 documents. (OnlyGreenTrades only has 1,326)
+`['EliteOptions2', 'WarlusTrades', 'canuck2usa', 'OnlyGreenTrades', 'Ultra_Calls', 'MarketBeatCom', 'stockstobuy', 'TickerReport', 'AmericanBanking','SeekingAlpha', 'MarketRebels', 'TradeOnTheWire1']`
   
 Output file will follow the naming convention:  
 `news_<%Y%m%d_%H%M%S>.csv` *where <> represents the datetime when it was scraped*  
@@ -54,4 +54,4 @@ And so when there is a new tweet, it will:
 a. Add that tweet to our db, then  
 b. Delete the oldest tweet based on tweetcreatedts  
   
-Therefore, we will always maintain a dynamic database of size 10,000 documents.
+Therefore, we will always maintain a dynamic database of size 23,326 documents.
