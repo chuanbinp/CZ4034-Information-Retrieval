@@ -3,6 +3,7 @@ import csv
 import preprocessor as p
 import pysolr
 from numpy import nan
+import socketio
 
 p.set_options(p.OPT.URL, p.OPT.MENTION, p.OPT.RESERVED, p.OPT.EMOJI, p.OPT.SMILEY)
 
@@ -78,6 +79,7 @@ class StreamListener(tweepy.StreamListener):
             addData(obj)
             #Remove small data
             removeNOldestData(1)
+            sio.emit('streamer_new_tweet', {'data': 'new tweet received'})
         
     def on_error(self, status_code):
         if status_code == 420:
@@ -142,5 +144,14 @@ stream = tweepy.Stream(auth, l, tweet_mode='extended')
 solr = pysolr.Solr('http://localhost:8983/solr/tweets/', always_commit=True)
 solr.ping()
 
+#Connect to backend
+sio = socketio.Client()
+sio.connect('http://localhost:5000')
+# @sio.event
+# def connect():
+#     print("Connected with backend server.")
+#     sio.emit('client_connect', {'data': 'Client connected!'})
+
 #Start listening
-stream.filter(follow=["20402945", "28164923","1754641","2961589380","19643448"])
+stream.filter(follow=['372322178','1018324467758465024', '748611168168644612', '430841130', '779131850023378944', '89517375', '68559732', '37564410', '1979190776', '61661638', '23059499', '817007725666242561', '51912109'])
+
