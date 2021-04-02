@@ -28,14 +28,22 @@ cd \solr-8.8.1\bin
 solr stop -all
 ```
   
-4. Start listening for new tweets!  
+4. Start server to serve data from solr
+```
+python server.py
+```
+  
+5. Start listening for new tweets!  
 ```
 python twitter_stream_to_db.py
 ```
 Since the solr has already been pre-populated, we can just run the `twitter_stream_to_db.py` script.  
 This allows us to listen for new tweets from the 12 chosen accounts and update our db instantly so that our **DB is in REALTIME**.  
   
-5. Everything is running now, have fun :)
+6. Access *http://localhost:5000/* to see server in action :)  
+  
+7. Frontend in progress...
+Refer to static/main.js to get reference code on how to call server
   
 ## Here are the functions of the 3 files:
 ### twitter_scraping.py
@@ -55,3 +63,23 @@ a. Add that tweet to our db, then
 b. Delete the oldest tweet based on tweetcreatedts  
   
 Therefore, we will always maintain a dynamic database of size 23,326 documents.
+  
+### server.py
+We are using a flask server as our backend. Socketio is used to transmit messages between server, client and twitterstreamer.  
+To see functionalities of our server, you can access *http://localhost:5000/* which is a skeleton frontend that serves up information as queried.  
+  
+Also, whenever there is a new tweet, the twitterstreamer will inform our backend server which will update the new_tweet_count_dict dictionary.
+```
+new_tweet_count_dict = {
+  <client_session_id_1> : count1,
+  <client_session_id_2> : count2,
+  ....
+}
+
+*where count1 reflects the number of new tweets client1 has not seen yet 
+```
+
+This allows us to update each specific frontend client to show:
+a. If there are new tweets?
+b. If a is True, how many are there?
+c. If a is True, the *refresh button* will also be activated
