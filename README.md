@@ -45,7 +45,7 @@ This allows us to listen for new tweets from the 12 chosen accounts and update o
 7. Frontend in progress...
 Refer to static/main.js to get reference code on how to call server
   
-## Here are the functions of the 3 files:
+## Here are the functions of the 4 main files:
 ### twitter_scraping.py
 Scrape 2000 documents of data from each of our designated 12 sources to come up with a total of 23,326 documents. (OnlyGreenTrades only has 1,326)
 `['EliteOptions2', 'WarlusTrades', 'canuck2usa', 'OnlyGreenTrades', 'Ultra_Calls', 'MarketBeatCom', 'stockstobuy', 'TickerReport', 'AmericanBanking','SeekingAlpha', 'MarketRebels', 'TradeOnTheWire1']`
