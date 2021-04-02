@@ -68,7 +68,7 @@ Therefore, we will always maintain a dynamic database of size 23,326 documents.
 We are using a flask server as our backend. Socketio is used to transmit messages between server, client and twitterstreamer.  
 To see functionalities of our server, you can access *http://localhost:5000/* which is a skeleton frontend that serves up information as queried.  
   
-Also, whenever there is a new tweet, the twitterstreamer will inform our backend server which will update the new_tweet_count_dict dictionary.
+Also, whenever there is a new tweet, the twitterstreamer will inform our backend server which will update the server's new_tweet_count_dict dictionary.
 ```
 new_tweet_count_dict = {
   <client_session_id_1> : count1,
@@ -78,8 +78,8 @@ new_tweet_count_dict = {
 
 *where count1 reflects the number of new tweets client1 has not seen yet 
 ```
-
-This allows us to update each specific frontend client to show:
-a. If there are new tweets?
-b. If a is True, how many are there?
-c. If a is True, the *refresh button* will also be activated
+  
+This allows us to update each specific frontend client to show:  
+a. If there are new tweets?  
+b. If a is True, how many are there?  
+c. If a is True, the *refresh button* will also be activated  
