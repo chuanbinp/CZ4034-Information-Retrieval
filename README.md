@@ -79,7 +79,7 @@ new_tweet_count_dict = {
 *where count1 reflects the number of new tweets client1 has not seen yet 
 ```
   
-This allows us to update each specific frontend client to show:  
+This allows us to **update each specific frontend client** to show:  
 a. If there are new tweets?  
 b. If a is True, how many are there?  
 c. If a is True, the *refresh button* will also be activated  
