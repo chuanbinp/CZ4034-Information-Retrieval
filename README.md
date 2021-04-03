@@ -19,7 +19,7 @@ consumer_secret,  <your consumer secret>
 cd \solr-8.8.1\bin  
 solr start -c -p 8983 -s ../example/cloud/node1/solr
 ```
-Go to your web browser and go to URL *http://localhost:8983/solr/#/*  
+Go to your web browser and go to URL *http://localhost:8983/*  
 Take note you need to have SOLR running before running scripts `inject_data.py` and `twitter_stream_to_db.py`
   
 To stop,
