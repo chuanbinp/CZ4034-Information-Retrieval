@@ -49,7 +49,7 @@ Refer to static/main.js to get reference code on how to call server
 cd react_frontend
 npm start
 ```
-Access *http://localhost:3000/* to see client  
+Access *http://localhost:3000/* to see client. Currently frontend is done, just need to get data from server via socketio and server it up using useState and useEffect 
 
   
 ## Here are the functions of the 4 main files:
