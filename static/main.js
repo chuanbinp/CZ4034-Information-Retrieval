@@ -41,7 +41,7 @@ function getCheckedBoxes(chkboxName) {
 
 document.addEventListener('DOMContentLoaded', function initialize(e) {
 
-    var socket = io();
+    var socket = io('http://localhost:5000');
     var results
     socket.on('connect', function() {
         socket.emit('join', {data: 'Client connected!', cid: socket.id});
