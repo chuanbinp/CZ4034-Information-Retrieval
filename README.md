@@ -4,6 +4,7 @@
 1. Install dependencies  
 ```
 pip install -r requirements.txt
+npm install
 ```
   
 2. Obtain your twitter api keys from *https://developer.twitter.com/en* and fill in the key.csv file.  
@@ -41,9 +42,15 @@ Since the solr has already been pre-populated, we can just run the `twitter_stre
 This allows us to listen for new tweets from the 12 chosen accounts and update our db instantly so that our **DB is in REALTIME**.  
   
 6. Access *http://localhost:5000/* to see server in action :)  
+Refer to static/main.js to get reference code on how to call server 
   
-7. Frontend in progress...
-Refer to static/main.js to get reference code on how to call server
+7. Frontend in progress...  
+```
+cd react_frontend
+npm start
+```
+Access *http://localhost:3000/* to see client  
+
   
 ## Here are the functions of the 4 main files:
 ### twitter_scraping.py
