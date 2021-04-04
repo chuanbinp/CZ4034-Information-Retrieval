@@ -3,3 +3,5 @@ pysolr==3.9.0
 pandas==1.0.1
 numpy==1.18.4
 tweet-preprocessor==0.6.0
+Flask==1.1.2
+Flask-SocketIO==5.0.1
