@@ -8,7 +8,7 @@ import json as js
 template_dir = os.getcwd()
 template_dir = os.path.join(template_dir, 'templates')
 app = Flask(__name__)
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 solr = pysolr.Solr('http://localhost:8983/solr/tweets/', always_commit=True, results_cls=dict)
 solr.ping()
@@ -19,17 +19,19 @@ new_tweet_count_dict = {}
 
 
 def getAllDataDesc():
-    results = solr.search('*', sort='tweetcreatedts desc', rows=10)
+    results = solr.search('*', sort='tweetcreatedts desc', rows=15)
     print("Successfully retrieved ", len(results['response']['docs']), "rows of data.")
     return results
 
 def getData(params):
     if(len(params['q'])==0):
         params['q'] = "*"
+    if(len(params['fq'])==12):
+        params['fq'] = "username:none"
     if('relevance' in params['sort']):
-        results = solr.search(params['q'], rows=10)
+        results = solr.search(params['q'], fq=params['fq'], rows=15)
     else:
-        results = solr.search(params['q'], sort=params['sort'], rows=10)
+        results = solr.search(params['q'], fq=params['fq'], sort=params['sort'], rows=15)
     print("Successfully retrieved ", len(results['response']['docs']), "rows of data.")
     return results   
 

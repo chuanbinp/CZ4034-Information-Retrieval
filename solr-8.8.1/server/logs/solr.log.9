@@ -1,121 +1,318 @@
-2021-04-03 17:52:34.582 INFO  (main) [   ] o.e.j.u.log Logging initialized @1506ms to org.eclipse.jetty.util.log.Slf4jLog
-2021-04-03 17:52:34.780 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.34.v20201102; built: 2020-11-02T14:15:39.302Z; git: e46af88704a893fc12cb0e3bf46e2c7b48a009e7; jvm 1.8.0_261-b12
-2021-04-03 17:52:34.815 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/phoec/OneDrive/Desktop/NTU/Y3S2/CZ4034%20Information%20Retrieval/informationRetrieval/solr-8.8.1/server/contexts/] at interval 0
-2021-04-03 17:52:35.764 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
-2021-04-03 17:52:35.779 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
-2021-04-03 17:52:35.779 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
-2021-04-03 17:52:35.782 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
-2021-04-03 17:52:35.887 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
-2021-04-03 17:52:35.895 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.8.1
-2021-04-03 17:52:35.895 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in cloud mode on port 8983
-2021-04-03 17:52:35.895 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1
-2021-04-03 17:52:35.896 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2021-04-03T17:52:35.896Z
-2021-04-03 17:52:35.911 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\../example/cloud/node1/solr
-2021-04-03 17:52:35.912 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\..\example\cloud\node1\solr\solr.xml
-2021-04-03 17:52:36.031 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@1a04f701, but no JMX reporters were configured - adding default JMX reporter.
-2021-04-03 17:52:36.425 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
-2021-04-03 17:52:37.034 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@724f138e[provider=null,keyStore=null,trustStore=null]
-2021-04-03 17:52:37.034 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@724f138e[provider=null,keyStore=null,trustStore=null]
-2021-04-03 17:52:37.167 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@c41709a[provider=null,keyStore=null,trustStore=null]
-2021-04-03 17:52:37.167 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@c41709a[provider=null,keyStore=null,trustStore=null]
-2021-04-03 17:52:37.283 INFO  (main) [   ] o.a.s.c.SolrZkServerProps Reading configuration from: C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\..\example\cloud\node1\solr\zoo.cfg
-2021-04-03 17:52:37.291 INFO  (main) [   ] o.a.s.c.SolrZkServer STARTING EMBEDDED STANDALONE ZOOKEEPER SERVER at port 9983
-2021-04-03 17:52:37.291 WARN  (main) [   ] o.a.s.c.SolrZkServer Embedded Zookeeper is not recommended in production environments. See Reference Guide for details.
-2021-04-03 17:52:37.367 WARN  (Thread-12) [   ] o.a.z.s.ServerCnxnFactory maxCnxns is not configured, using default value 0.
-2021-04-03 17:52:37.791 INFO  (main) [   ] o.a.s.c.ZkContainer Zookeeper client=localhost:9983
-2021-04-03 17:52:37.867 INFO  (main) [   ] o.a.s.c.c.ConnectionManager Waiting for client to connect to ZooKeeper
-2021-04-03 17:52:37.895 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.ConnectionManager zkClient has connected
-2021-04-03 17:52:37.895 INFO  (main) [   ] o.a.s.c.c.ConnectionManager Client is connected to ZooKeeper
-2021-04-03 17:52:37.971 INFO  (main) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (0) -> (1)
-2021-04-03 17:53:08.327 INFO  (zkCallback-10-thread-2) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (1) -> (0)
-2021-04-03 17:53:08.342 INFO  (main) [   ] o.a.s.c.OverseerElectionContext I am going to be the leader 192.168.1.99:8983_solr
-2021-04-03 17:53:08.349 INFO  (main) [   ] o.a.s.c.Overseer Overseer (id=72063591052410880-192.168.1.99:8983_solr-n_0000000008) starting
-2021-04-03 17:53:08.416 INFO  (main) [   ] o.a.s.c.ZkController Register node as live in ZooKeeper:/live_nodes/192.168.1.99:8983_solr
-2021-04-03 17:53:08.419 INFO  (OverseerStateUpdate-72063591052410880-192.168.1.99:8983_solr-n_0000000008) [   ] o.a.s.c.Overseer Starting to work on the main queue : 192.168.1.99:8983_solr
-2021-04-03 17:53:08.432 INFO  (zkCallback-10-thread-2) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (0) -> (1)
-2021-04-03 17:53:08.467 INFO  (main) [   ] o.a.s.p.PackageLoader /packages.json updated to version -1
-2021-04-03 17:53:08.491 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
-2021-04-03 17:53:08.509 WARN  (ScheduledTrigger-16-thread-1) [   ] o.a.s.c.a.ScheduledTrigger ScheduledTrigger was not able to run event at scheduled time: 2021-04-03T01:45:06.436Z. Now: 2021-04-03T17:53:08.509Z
-2021-04-03 17:53:08.607 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
-2021-04-03 17:53:08.672 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1a04f701
-2021-04-03 17:53:08.672 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1a04f701
-2021-04-03 17:53:08.675 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1a04f701
-2021-04-03 17:53:08.708 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\..\example\cloud\node1\solr
-2021-04-03 17:53:08.708 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [tweets_shard1_replica_n1]
-2021-04-03 17:53:08.719 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
-2021-04-03 17:53:08.751 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.8.1
-2021-04-03 17:53:08.910 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [   ] o.a.s.s.IndexSchema Schema name=default-config
-2021-04-03 17:53:09.048 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@60bd273d{/solr,file:///C:/Users/phoec/OneDrive/Desktop/NTU/Y3S2/CZ4034%20Information%20Retrieval/informationRetrieval/solr-8.8.1/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\server/solr-webapp/webapp}
-2021-04-03 17:53:09.060 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@5f683daf{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2021-04-03 17:53:09.060 INFO  (main) [   ] o.e.j.s.Server Started @35986ms
-2021-04-03 17:53:09.174 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2021-04-03 17:53:09.174 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2021-04-03 17:53:09.174 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2021-04-03 17:53:09.174 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2021-04-03 17:53:09.174 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2021-04-03 17:53:09.416 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [   ] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2021-04-03 17:53:09.611 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.8.1
-2021-04-03 17:53:09.642 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.IndexSchema Schema name=default-config
-2021-04-03 17:53:09.652 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
-2021-04-03 17:53:09.652 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
-2021-04-03 17:53:09.652 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
-2021-04-03 17:53:09.653 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
-2021-04-03 17:53:09.653 WARN  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
-2021-04-03 17:53:09.790 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2021-04-03 17:53:09.885 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.CoreContainer Creating SolrCore 'tweets_shard1_replica_n1' using configuration from configset _default, trusted=true
-2021-04-03 17:53:09.919 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.tweets.shard1.replica_n1' (registry 'solr.core.tweets.shard1.replica_n1') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1a04f701
-2021-04-03 17:53:09.927 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SolrCore [[tweets_shard1_replica_n1] ] Opening new SolrCore at [C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\..\example\cloud\node1\solr\tweets_shard1_replica_n1], dataDir=[C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\..\example\cloud\node1\solr\tweets_shard1_replica_n1\data\]
-2021-04-03 17:53:10.485 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2021-04-03 17:53:10.486 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2021-04-03 17:53:10.522 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2021-04-03 17:53:10.522 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2021-04-03 17:53:10.747 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.r.ManagedResourceStorage Configured ZooKeeperStorageIO with znodeBase: /configs/_default
-2021-04-03 17:53:10.752 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.r.ManagedResourceStorage Loaded null at path _rest_managed.json using ZooKeeperStorageIO:path=/configs/_default
-2021-04-03 17:53:10.754 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.ZkIndexSchemaReader Creating ZooKeeper watch for the managed schema at /configs/_default/managed-schema
-2021-04-03 17:53:10.757 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.ZkIndexSchemaReader Current schema version 1 is already the latest
-2021-04-03 17:53:10.768 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
-2021-04-03 17:53:10.773 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
-2021-04-03 17:53:10.781 INFO  (coreLoadExecutor-23-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2021-04-03 17:53:10.803 INFO  (searcherExecutor-25-thread-1-processing-n:192.168.1.99:8983_solr x:tweets_shard1_replica_n1 c:tweets s:shard1 r:core_node2) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2021-04-03 17:53:10.804 INFO  (searcherExecutor-25-thread-1-processing-n:192.168.1.99:8983_solr x:tweets_shard1_replica_n1 c:tweets s:shard1 r:core_node2) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2021-04-03 17:53:10.812 INFO  (searcherExecutor-25-thread-1-processing-n:192.168.1.99:8983_solr x:tweets_shard1_replica_n1 c:tweets s:shard1 r:core_node2) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SolrCore [tweets_shard1_replica_n1]  Registered new searcher autowarm time: 0 ms
-2021-04-03 17:53:10.835 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase make sure parent is created /collections/tweets/leaders/shard1
-2021-04-03 17:53:10.846 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext Enough replicas found to continue.
-2021-04-03 17:53:10.846 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I may be the new leader - try and sync
-2021-04-03 17:53:10.847 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SyncStrategy Sync replicas to http://192.168.1.99:8983/solr/tweets_shard1_replica_n1/
-2021-04-03 17:53:10.850 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SyncStrategy Sync Success - now sync replicas to me
-2021-04-03 17:53:10.851 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SyncStrategy http://192.168.1.99:8983/solr/tweets_shard1_replica_n1/ has no replicas
-2021-04-03 17:53:10.852 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase Creating leader registration node /collections/tweets/leaders/shard1/leader after winning as /collections/tweets/leader_elect/shard1/election/72063591052410880-core_node2-n_0000000007
-2021-04-03 17:53:10.859 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I am the new leader: http://192.168.1.99:8983/solr/tweets_shard1_replica_n1/ shard1
-2021-04-03 17:53:10.870 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.1.99:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ZkController I am the leader, no recovery necessary
-2021-04-03 17:53:10.890 INFO  (zkCallback-10-thread-2) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/tweets/state.json] for collection [tweets] has occurred - updating... (live nodes size: [1])
-2021-04-03 17:53:10.890 INFO  (zkCallback-10-thread-1) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/tweets/state.json] for collection [tweets] has occurred - updating... (live nodes size: [1])
-2021-04-03 17:53:10.891 INFO  (zkCallback-10-thread-3) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/tweets/state.json] for collection [tweets] has occurred - updating... (live nodes size: [1])
-2021-04-03 17:53:10.891 INFO  (zkCallback-10-thread-4) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/tweets/state.json] for collection [tweets] has occurred - updating... (live nodes size: [1])
-2021-04-03 17:53:33.726 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@5f683daf{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
-2021-04-03 17:53:33.726 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
-2021-04-03 17:53:33.729 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=603658030
-2021-04-03 17:53:33.729 INFO  (ShutdownMonitor) [   ] o.a.s.c.ZkController Remove node as live in ZooKeeper:/live_nodes/192.168.1.99:8983_solr
-2021-04-03 17:53:33.733 INFO  (ShutdownMonitor) [   ] o.a.s.c.ZkController Publish this node as DOWN...
-2021-04-03 17:53:33.733 INFO  (ShutdownMonitor) [   ] o.a.s.c.ZkController Publish node=192.168.1.99:8983_solr as DOWN
-2021-04-03 17:53:33.743 INFO  (coreCloseExecutor-32-thread-1) [   ] o.a.s.c.SolrCore [tweets_shard1_replica_n1]  CLOSING SolrCore org.apache.solr.core.SolrCore@4b8a6e8a
-2021-04-03 17:53:33.743 INFO  (coreCloseExecutor-32-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.tweets.shard1.replica_n1 tag=SolrCore@4b8a6e8a
-2021-04-03 17:53:33.744 INFO  (coreCloseExecutor-32-thread-1) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@30bc422a: rootName = null, domain = solr.core.tweets.shard1.replica_n1, service url = null, agent id = null] for registry solr.core.tweets.shard1.replica_n1/com.codahale.metrics.MetricRegistry@10858e72
-2021-04-03 17:53:33.745 INFO  (zkCallback-10-thread-4) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/tweets/state.json] for collection [tweets] has occurred - updating... (live nodes size: [1])
-2021-04-03 17:53:33.745 INFO  (zkCallback-10-thread-1) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/tweets/state.json] for collection [tweets] has occurred - updating... (live nodes size: [1])
-2021-04-03 17:53:33.745 INFO  (zkCallback-10-thread-2) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/tweets/state.json] for collection [tweets] has occurred - updating... (live nodes size: [1])
-2021-04-03 17:53:33.745 INFO  (zkCallback-10-thread-3) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/tweets/state.json] for collection [tweets] has occurred - updating... (live nodes size: [1])
-2021-04-03 17:53:33.762 INFO  (coreCloseExecutor-32-thread-1) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.collection.tweets.shard1.leader tag=SolrCore@4b8a6e8a
-2021-04-03 17:53:33.772 INFO  (coreCloseExecutor-32-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 Committing on IndexWriter.close()  ... SKIPPED (unnecessary).
-2021-04-03 17:53:33.796 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node tag=null
-2021-04-03 17:53:33.796 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@31ddd4a4: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node/com.codahale.metrics.MetricRegistry@5931ed51
-2021-04-03 17:53:33.799 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm tag=null
-2021-04-03 17:53:33.799 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@5e39850: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm/com.codahale.metrics.MetricRegistry@7b0fae4e
-2021-04-03 17:53:33.800 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty tag=null
-2021-04-03 17:53:33.800 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1603dc2f: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty/com.codahale.metrics.MetricRegistry@2a5867ac
-2021-04-03 17:53:33.800 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.cluster tag=null
-2021-04-03 17:53:33.802 INFO  (closeThreadPool-34-thread-1) [   ] o.a.s.c.Overseer Overseer (id=72063591052410880-192.168.1.99:8983_solr-n_0000000008) closing
-2021-04-03 17:53:33.803 INFO  (OverseerStateUpdate-72063591052410880-192.168.1.99:8983_solr-n_0000000008) [   ] o.a.s.c.Overseer Overseer Loop exiting : 192.168.1.99:8983_solr
-2021-04-03 17:53:33.803 INFO  (OverseerAutoScalingTriggerThread-72063591052410880-192.168.1.99:8983_solr-n_0000000008) [   ] o.a.s.c.a.OverseerTriggerThread OverseerTriggerThread woken up but we are closed, exiting.
-2021-04-03 17:53:33.806 INFO  (closeThreadPool-34-thread-2) [   ] o.a.s.c.Overseer Overseer (id=72063591052410880-192.168.1.99:8983_solr-n_0000000008) closing
-2021-04-03 17:53:33.927 INFO  (ShutdownMonitor) [   ] o.a.s.c.Overseer Overseer (id=72063591052410880-192.168.1.99:8983_solr-n_0000000008) closing
+2021-04-07 15:04:40.106 INFO  (main) [   ] o.e.j.u.log Logging initialized @1687ms to org.eclipse.jetty.util.log.Slf4jLog
+2021-04-07 15:04:40.363 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.34.v20201102; built: 2020-11-02T14:15:39.302Z; git: e46af88704a893fc12cb0e3bf46e2c7b48a009e7; jvm 1.8.0_261-b12
+2021-04-07 15:04:40.395 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/phoec/OneDrive/Desktop/NTU/Y3S2/CZ4034%20Information%20Retrieval/informationRetrieval/solr-8.8.1/server/contexts/] at interval 0
+2021-04-07 15:04:41.343 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2021-04-07 15:04:41.357 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2021-04-07 15:04:41.357 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2021-04-07 15:04:41.360 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 600000ms
+2021-04-07 15:04:41.438 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2021-04-07 15:04:41.444 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 8.8.1
+2021-04-07 15:04:41.444 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in cloud mode on port 8983
+2021-04-07 15:04:41.444 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1
+2021-04-07 15:04:41.445 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2021-04-07T15:04:41.445Z
+2021-04-07 15:04:41.458 INFO  (main) [   ] o.a.s.c.SolrPaths Using system property solr.solr.home: C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\../example/cloud/node1/solr
+2021-04-07 15:04:41.458 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\..\example\cloud\node1\solr\solr.xml
+2021-04-07 15:04:41.574 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@1a04f701, but no JMX reporters were configured - adding default JMX reporter.
+2021-04-07 15:04:42.369 INFO  (main) [   ] o.a.s.h.c.HttpShardHandlerFactory Host whitelist initialized: WhitelistHostChecker [whitelistHosts=null, whitelistHostCheckingEnabled=true]
+2021-04-07 15:04:43.382 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@724f138e[provider=null,keyStore=null,trustStore=null]
+2021-04-07 15:04:43.382 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@724f138e[provider=null,keyStore=null,trustStore=null]
+2021-04-07 15:04:43.507 WARN  (main) [   ] o.e.j.u.s.S.config Trusting all certificates configured for Client@c41709a[provider=null,keyStore=null,trustStore=null]
+2021-04-07 15:04:43.508 WARN  (main) [   ] o.e.j.u.s.S.config No Client EndPointIdentificationAlgorithm configured for Client@c41709a[provider=null,keyStore=null,trustStore=null]
+2021-04-07 15:04:43.616 INFO  (main) [   ] o.a.s.c.SolrZkServerProps Reading configuration from: C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\..\example\cloud\node1\solr\zoo.cfg
+2021-04-07 15:04:43.627 INFO  (main) [   ] o.a.s.c.SolrZkServer STARTING EMBEDDED STANDALONE ZOOKEEPER SERVER at port 9983
+2021-04-07 15:04:43.627 WARN  (main) [   ] o.a.s.c.SolrZkServer Embedded Zookeeper is not recommended in production environments. See Reference Guide for details.
+2021-04-07 15:04:43.716 WARN  (Thread-12) [   ] o.a.z.s.ServerCnxnFactory maxCnxns is not configured, using default value 0.
+2021-04-07 15:04:44.141 INFO  (main) [   ] o.a.s.c.ZkContainer Zookeeper client=localhost:9983
+2021-04-07 15:04:44.209 INFO  (main) [   ] o.a.s.c.c.ConnectionManager Waiting for client to connect to ZooKeeper
+2021-04-07 15:04:44.240 INFO  (zkConnectionManagerCallback-11-thread-1) [   ] o.a.s.c.c.ConnectionManager zkClient has connected
+2021-04-07 15:04:44.240 INFO  (main) [   ] o.a.s.c.c.ConnectionManager Client is connected to ZooKeeper
+2021-04-07 15:04:44.322 INFO  (main) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (0) -> (1)
+2021-04-07 15:04:44.390 INFO  (main) [   ] o.a.s.c.ZkController Publish node=192.168.0.100:8983_solr as DOWN
+2021-04-07 15:04:44.406 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2021-04-07 15:04:44.407 INFO  (main) [   ] o.a.s.c.ZkController Register node as live in ZooKeeper:/live_nodes/192.168.0.100:8983_solr
+2021-04-07 15:04:44.430 INFO  (zkCallback-10-thread-1) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (1) -> (2)
+2021-04-07 15:04:44.517 INFO  (main) [   ] o.a.s.p.PackageLoader /packages.json updated to version -1
+2021-04-07 15:04:44.538 WARN  (main) [   ] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2021-04-07 15:04:44.746 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2021-04-07 15:04:44.888 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1a04f701
+2021-04-07 15:04:44.889 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1a04f701
+2021-04-07 15:04:44.895 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1a04f701
+2021-04-07 15:04:44.948 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 1 core definitions underneath C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\..\example\cloud\node1\solr
+2021-04-07 15:04:44.949 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [tweets_shard1_replica_n1]
+2021-04-07 15:04:45.008 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.8.1
+2021-04-07 15:04:45.223 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [   ] o.a.s.s.IndexSchema Schema name=default-config
+2021-04-07 15:04:45.403 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@60bd273d{/solr,file:///C:/Users/phoec/OneDrive/Desktop/NTU/Y3S2/CZ4034%20Information%20Retrieval/informationRetrieval/solr-8.8.1/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\server/solr-webapp/webapp}
+2021-04-07 15:04:45.421 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@5f683daf{HTTP/1.1, (http/1.1, h2c)}{0.0.0.0:8983}
+2021-04-07 15:04:45.422 INFO  (main) [   ] o.e.j.s.Server Started @7005ms
+2021-04-07 15:04:45.597 WARN  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-04-07 15:04:45.597 WARN  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-04-07 15:04:45.597 WARN  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-04-07 15:04:45.597 WARN  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-04-07 15:04:45.597 WARN  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [   ] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-04-07 15:04:45.935 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [   ] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-04-07 15:04:47.185 INFO  (qtp952562199-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1617807887029} status=0 QTime=58
+2021-04-07 15:04:47.241 INFO  (qtp952562199-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1617807887029} status=0 QTime=114
+2021-04-07 15:04:47.264 INFO  (qtp952562199-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=LIST&wt=json&_=1617807887029} status=0 QTime=5
+2021-04-07 15:04:47.277 INFO  (qtp952562199-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=LISTALIASES&wt=json&_=1617807887029} status=0 QTime=4
+2021-04-07 15:04:47.298 INFO  (qtp952562199-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1617807887029} status=0 QTime=45
+2021-04-07 15:04:49.990 INFO  (qtp952562199-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=35
+2021-04-07 15:04:50.024 INFO  (qtp952562199-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=CLUSTERSTATUS&wt=json} status=0 QTime=8
+2021-04-07 15:04:53.799 INFO  (qtp952562199-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1617807887029} status=0 QTime=0
+2021-04-07 15:04:53.811 INFO  (qtp952562199-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=CLUSTERSTATUS&wt=json&_=1617807887029} status=0 QTime=9
+2021-04-07 15:04:53.852 INFO  (qtp952562199-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1617807887029} status=0 QTime=53
+2021-04-07 15:04:53.864 INFO  (qtp952562199-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=LIST&wt=json&_=1617807887029} status=0 QTime=2
+2021-04-07 15:04:53.874 INFO  (qtp952562199-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=LISTALIASES&wt=json&_=1617807887029} status=0 QTime=2
+2021-04-07 15:04:55.341 INFO  (qtp952562199-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1617807887029} status=0 QTime=0
+2021-04-07 15:04:55.390 INFO  (qtp952562199-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1617807887029} status=0 QTime=48
+2021-04-07 15:04:55.402 INFO  (qtp952562199-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=LIST&wt=json&_=1617807887029} status=0 QTime=3
+2021-04-07 15:04:55.412 INFO  (qtp952562199-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=LISTALIASES&wt=json&_=1617807887029} status=0 QTime=2
+2021-04-07 15:05:15.199 INFO  (zkCallback-10-thread-1) [   ] o.a.s.c.OverseerElectionContext I am going to be the leader 192.168.0.100:8983_solr
+2021-04-07 15:05:15.200 INFO  (zkCallback-10-thread-2) [   ] o.a.s.c.c.ZkStateReader Updated live nodes from ZooKeeper... (2) -> (1)
+2021-04-07 15:05:15.206 INFO  (zkCallback-10-thread-1) [   ] o.a.s.c.Overseer Overseer (id=72058872687230976-192.168.0.100:8983_solr-n_0000000011) starting
+2021-04-07 15:05:15.290 INFO  (OverseerStateUpdate-72058872687230976-192.168.0.100:8983_solr-n_0000000011) [   ] o.a.s.c.Overseer Starting to work on the main queue : 192.168.0.100:8983_solr
+2021-04-07 15:05:15.387 WARN  (ScheduledTrigger-21-thread-1) [   ] o.a.s.c.a.ScheduledTrigger ScheduledTrigger was not able to run event at scheduled time: 2021-04-05T01:45:06.436Z. Now: 2021-04-07T15:05:15.386Z
+2021-04-07 15:05:16.316 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SolrConfig Using Lucene MatchVersion: 8.8.1
+2021-04-07 15:05:16.347 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.IndexSchema Schema name=default-config
+2021-04-07 15:05:16.356 WARN  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitNorms to be specified in schema, hardcoded behavior is omitNorms=true
+2021-04-07 15:05:16.356 WARN  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitTermFreqAndPositions to be specified in schema, hardcoded behavior is omitTermFreqAndPositions=true
+2021-04-07 15:05:16.356 WARN  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termOffsets to be specified in schema, hardcoded behavior is termOffsets=false
+2021-04-07 15:05:16.356 WARN  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow termPositions to be specified in schema, hardcoded behavior is termPositions=false
+2021-04-07 15:05:16.356 WARN  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.AbstractSpatialPrefixTreeFieldType FieldType SpatialRecursivePrefixTreeFieldType does not allow omitPositions to be specified in schema, hardcoded behavior is omitPositions=true
+2021-04-07 15:05:16.398 WARN  (ScheduledTrigger-21-thread-1) [   ] o.a.s.c.a.ScheduledTrigger ScheduledTrigger was not able to run event at scheduled time: 2021-04-06T01:45:06.436Z. Now: 2021-04-07T15:05:16.396Z
+2021-04-07 15:05:16.473 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2021-04-07 15:05:16.569 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.CoreContainer Creating SolrCore 'tweets_shard1_replica_n1' using configuration from configset _default, trusted=true
+2021-04-07 15:05:16.581 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.tweets.shard1.replica_n1' (registry 'solr.core.tweets.shard1.replica_n1') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@1a04f701
+2021-04-07 15:05:16.588 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SolrCore [[tweets_shard1_replica_n1] ] Opening new SolrCore at [C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\..\example\cloud\node1\solr\tweets_shard1_replica_n1], dataDir=[C:\Users\phoec\OneDrive\Desktop\NTU\Y3S2\CZ4034 Information Retrieval\informationRetrieval\solr-8.8.1\bin\..\example\cloud\node1\solr\tweets_shard1_replica_n1\data\]
+2021-04-07 15:05:17.238 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2021-04-07 15:05:17.239 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2021-04-07 15:05:17.274 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2021-04-07 15:05:17.275 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2021-04-07 15:05:17.378 ERROR (qtp952562199-19) [   ] o.a.s.s.HttpSolrCall org.apache.solr.common.SolrException: Error trying to proxy request for url: http://192.168.1.99:8983/solr/tweets/select with _forwardCount: 1
+	at org.apache.solr.servlet.HttpSolrCall.remoteQuery(HttpSolrCall.java:729)
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:550)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:427)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:357)
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:201)
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1601)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:548)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:602)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1612)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1434)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1582)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:191)
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:556)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:773)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:905)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 192.168.1.99:8983 [/192.168.1.99] failed: Connection timed out: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.apache.solr.servlet.HttpSolrCall.remoteQuery(HttpSolrCall.java:697)
+	... 41 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 51 more
+
+2021-04-07 15:05:17.407 WARN  (ScheduledTrigger-21-thread-2) [   ] o.a.s.c.a.ScheduledTrigger ScheduledTrigger was not able to run event at scheduled time: 2021-04-07T01:45:06.436Z. Now: 2021-04-07T15:05:17.406Z
+2021-04-07 15:05:17.565 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.r.ManagedResourceStorage Configured ZooKeeperStorageIO with znodeBase: /configs/_default
+2021-04-07 15:05:17.570 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.r.ManagedResourceStorage Loaded null at path _rest_managed.json using ZooKeeperStorageIO:path=/configs/_default
+2021-04-07 15:05:17.572 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.ZkIndexSchemaReader Creating ZooKeeper watch for the managed schema at /configs/_default/managed-schema
+2021-04-07 15:05:17.575 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.ZkIndexSchemaReader Current schema version 1 is already the latest
+2021-04-07 15:05:17.585 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2021-04-07 15:05:17.590 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2021-04-07 15:05:17.602 INFO  (coreLoadExecutor-19-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2021-04-07 15:05:17.628 INFO  (searcherExecutor-25-thread-1-processing-n:192.168.0.100:8983_solr x:tweets_shard1_replica_n1 c:tweets s:shard1 r:core_node2) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2021-04-07 15:05:17.628 INFO  (searcherExecutor-25-thread-1-processing-n:192.168.0.100:8983_solr x:tweets_shard1_replica_n1 c:tweets s:shard1 r:core_node2) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2021-04-07 15:05:17.636 INFO  (searcherExecutor-25-thread-1-processing-n:192.168.0.100:8983_solr x:tweets_shard1_replica_n1 c:tweets s:shard1 r:core_node2) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SolrCore [tweets_shard1_replica_n1]  Registered new searcher autowarm time: 0 ms
+2021-04-07 15:05:17.660 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase make sure parent is created /collections/tweets/leaders/shard1
+2021-04-07 15:05:17.672 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext Enough replicas found to continue.
+2021-04-07 15:05:17.672 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I may be the new leader - try and sync
+2021-04-07 15:05:17.673 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SyncStrategy Sync replicas to http://192.168.0.100:8983/solr/tweets_shard1_replica_n1/
+2021-04-07 15:05:17.675 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SyncStrategy Sync Success - now sync replicas to me
+2021-04-07 15:05:17.677 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.SyncStrategy http://192.168.0.100:8983/solr/tweets_shard1_replica_n1/ has no replicas
+2021-04-07 15:05:17.678 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContextBase Creating leader registration node /collections/tweets/leaders/shard1/leader after winning as /collections/tweets/leader_elect/shard1/election/72058872687230976-core_node2-n_0000000010
+2021-04-07 15:05:17.685 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ShardLeaderElectionContext I am the new leader: http://192.168.0.100:8983/solr/tweets_shard1_replica_n1/ shard1
+2021-04-07 15:05:17.698 INFO  (coreZkRegister-1-thread-1-processing-n:192.168.0.100:8983_solr) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.ZkController I am the leader, no recovery necessary
+2021-04-07 15:05:17.707 INFO  (zkCallback-10-thread-2) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/tweets/state.json] for collection [tweets] has occurred - updating... (live nodes size: [1])
+2021-04-07 15:05:17.707 INFO  (zkCallback-10-thread-1) [   ] o.a.s.c.c.ZkStateReader A cluster state change: [WatchedEvent state:SyncConnected type:NodeDataChanged path:/collections/tweets/state.json] for collection [tweets] has occurred - updating... (live nodes size: [1])
+2021-04-07 15:05:20.902 INFO  (qtp952562199-23) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=*:*&_=1617807895321} hits=23326 status=0 QTime=57
+2021-04-07 15:05:27.336 ERROR (qtp952562199-22) [   ] o.a.s.s.HttpSolrCall org.apache.solr.common.SolrException: Error trying to proxy request for url: http://192.168.1.99:8983/solr/tweets/select with _forwardCount: 1
+	at org.apache.solr.servlet.HttpSolrCall.remoteQuery(HttpSolrCall.java:729)
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:550)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:427)
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:357)
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:201)
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1601)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:548)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:602)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1612)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1434)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1582)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:191)
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177)
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:383)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:556)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:375)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:273)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:336)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:313)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:171)
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:129)
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:375)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:773)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:905)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.http.conn.HttpHostConnectException: Connect to 192.168.1.99:8983 [/192.168.1.99] failed: Connection timed out: connect
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:156)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:376)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:393)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:236)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:83)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at org.apache.solr.servlet.HttpSolrCall.remoteQuery(HttpSolrCall.java:697)
+	... 41 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:75)
+	at org.apache.http.impl.conn.DefaultHttpClientConnectionOperator.connect(DefaultHttpClientConnectionOperator.java:142)
+	... 51 more
+
+2021-04-07 15:07:15.885 INFO  (AutoscalingActionExecutor-22-thread-1) [   ] o.a.s.c.a.ExecutePlanAction No operations to execute for event: {
+  "id":"11c6064f6f2cTac3v8z3nmzw3v0vjrrpjee4jy",
+  "source":".auto_add_replicas",
+  "eventTime":19542207065900,
+  "eventType":"NODELOST",
+  "properties":{
+    "eventTimes":[19542207065900],
+    "preferredOperation":"movereplica",
+    "_enqueue_time_":19662622915900,
+    "nodeNames":["192.168.1.99:8983_solr"]}}
+2021-04-07 15:08:43.608 INFO  (qtp952562199-21) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=*:*&sort=tweetcreatedts+desc&rows=200&_=1617807895321} hits=23326 status=0 QTime=27
+2021-04-07 15:08:53.019 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=*:*&rows=200&_=1617807895321} hits=23326 status=0 QTime=6
+2021-04-07 15:10:20.275 INFO  (qtp952562199-21) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=*:*&fl=tweeturls,tweethashtags,tweetmentions,tweettext,tweettextcleaned&rows=200&_=1617807895321} hits=23326 status=0 QTime=0
+2021-04-07 15:10:51.474 INFO  (qtp952562199-25) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=username:WarlusTrades&fl=tweeturls,tweethashtags,tweetmentions,tweettext,tweettextcleaned&rows=200&_=1617807895321} hits=2000 status=0 QTime=27
+2021-04-07 15:12:31.749 INFO  (qtp952562199-21) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:"I'm+looking+for+$TSLA+$1,000+as+well!"&rows=200&_=1617807895321} hits=1 status=0 QTime=31
+2021-04-07 16:44:50.977 INFO  (qtp952562199-69) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={rows=200&_=1617807895321} hits=0 status=0 QTime=8
+2021-04-07 16:44:57.230 INFO  (qtp952562199-21) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={rows=200&_=1617807895321} hits=0 status=0 QTime=0
+2021-04-07 16:44:58.393 INFO  (qtp952562199-69) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={rows=200&_=1617807895321} hits=0 status=0 QTime=0
+2021-04-07 16:45:02.113 INFO  (qtp952562199-69) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1617807887029} status=0 QTime=2
+2021-04-07 16:45:02.123 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/admin/file params={wt=json&_=1617813902104} status=0 QTime=8
+2021-04-07 16:45:02.176 INFO  (qtp952562199-23) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/admin/file params={file=lang&wt=json&_=1617813902104} status=0 QTime=31
+2021-04-07 16:45:02.176 INFO  (qtp952562199-70) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1617807887029} status=0 QTime=63
+2021-04-07 16:45:02.207 INFO  (qtp952562199-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=LIST&wt=json&_=1617807887029} status=0 QTime=0
+2021-04-07 16:45:02.219 INFO  (qtp952562199-70) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=LISTALIASES&wt=json&_=1617807887029} status=0 QTime=1
+2021-04-07 16:45:02.816 INFO  (qtp952562199-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1617807887029} status=0 QTime=0
+2021-04-07 16:45:02.856 INFO  (qtp952562199-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1617807887029} status=0 QTime=38
+2021-04-07 16:45:02.864 INFO  (qtp952562199-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=LIST&wt=json&_=1617807887029} status=0 QTime=0
+2021-04-07 16:45:02.870 INFO  (qtp952562199-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/collections params={action=LISTALIASES&wt=json&_=1617807887029} status=0 QTime=0
+2021-04-07 16:45:03.909 INFO  (qtp952562199-23) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=*:*&_=1617807895321} hits=23326 status=0 QTime=1
+2021-04-07 17:23:56.931 INFO  (qtp952562199-70) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/admin/ping params={} hits=23326 status=0 QTime=6
+2021-04-07 17:23:56.932 INFO  (qtp952562199-70) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/admin/ping params={} status=0 QTime=7
+2021-04-07 17:53:30.838 INFO  (qtp952562199-25) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=*&sort=tweetcreatedts+desc&rows=10&wt=json} hits=23326 status=0 QTime=9
+2021-04-07 17:53:32.780 INFO  (qtp952562199-23) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=*&rows=10&wt=json} hits=23326 status=0 QTime=1
+2021-04-07 17:53:40.592 INFO  (qtp952562199-25) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=*&sort=tweetcreatedts+desc&rows=10&wt=json} hits=23326 status=0 QTime=0
+2021-04-07 17:53:43.172 INFO  (qtp952562199-23) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=*&sort=tweetfavcount+desc&rows=10&wt=json} hits=23326 status=0 QTime=29
+2021-04-07 17:53:47.181 INFO  (qtp952562199-25) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=*&sort=tweetretweetcount+desc&rows=10&wt=json} hits=23326 status=0 QTime=9
+2021-04-07 18:05:24.267 INFO  (qtp952562199-23) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=username:(canuck2usa)&_=1617807895321} hits=2000 status=0 QTime=12
+2021-04-07 18:05:39.665 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=username:(canuck2usa,+SeekingAlpha)&_=1617807895321} hits=4010 status=0 QTime=26
+2021-04-07 18:05:56.172 INFO  (qtp952562199-23) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=username:(canuck2usa,+SeekingAlpha)&fl=username&rows=100&_=1617807895321} hits=4010 status=0 QTime=5
+2021-04-07 18:06:13.254 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=username:(canuck2usa,+SeekingAlpha,+EliteOptions2)&fl=username&rows=100&_=1617807895321} hits=6010 status=0 QTime=6
+2021-04-07 18:06:25.296 INFO  (qtp952562199-23) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=username:(canuck2usa,+SeekingAlpha,+EliteOptions2)&fl=username&sort=tweetcreatedts+desc&rows=100&_=1617807895321} hits=6010 status=0 QTime=7
+2021-04-07 18:06:30.098 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=username:(canuck2usa,+SeekingAlpha,+EliteOptions2)&fl=username&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=6010 status=0 QTime=7
+2021-04-07 18:06:30.146 INFO  (qtp952562199-23) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=username:(canuck2usa,+SeekingAlpha,+EliteOptions2)&fl=username&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=6010 status=0 QTime=1
+2021-04-07 18:06:58.139 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2)&fl=username&rows=100&_=1617807895321} hits=6599 status=0 QTime=13
+2021-04-07 18:07:04.950 INFO  (qtp952562199-23) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2)&fl=username,tweettextcleaned&rows=100&_=1617807895321} hits=6599 status=0 QTime=1
+2021-04-07 18:07:57.570 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2,)&fl=username,tweettextcleaned&rows=100&_=1617807895321} hits=6599 status=0 QTime=1
+2021-04-07 18:07:58.218 INFO  (qtp952562199-17) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2,)&fl=username,tweettextcleaned&rows=100&_=1617807895321} hits=6599 status=0 QTime=1
+2021-04-07 18:07:58.230 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2,)&fl=username,tweettextcleaned&rows=100&_=1617807895321} hits=6599 status=0 QTime=1
+2021-04-07 18:07:58.731 INFO  (qtp952562199-17) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2,)&fl=username,tweettextcleaned&rows=100&_=1617807895321} hits=6599 status=0 QTime=1
+2021-04-07 18:08:03.617 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2,)&fl=username,tweettextcleaned&sort=tweetcreatedts+desc&rows=100&_=1617807895321} hits=6599 status=0 QTime=12
+2021-04-07 18:08:15.028 INFO  (qtp952562199-17) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2,)&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=6599 status=0 QTime=8
+2021-04-07 18:08:24.606 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2)&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=6599 status=0 QTime=2
+2021-04-07 18:08:25.853 INFO  (qtp952562199-17) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2)&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=6599 status=0 QTime=1
+2021-04-07 18:08:26.197 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2)&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=6599 status=0 QTime=1
+2021-04-07 18:08:26.334 INFO  (qtp952562199-17) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:(canuck2usa,+SeekingAlpha,+EliteOptions2)&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=6599 status=0 QTime=1
+2021-04-07 18:08:46.056 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:canuck2usa&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=3128 status=0 QTime=3
+2021-04-07 18:08:46.852 INFO  (qtp952562199-17) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:canuck2usa&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=3128 status=0 QTime=1
+2021-04-07 18:08:47.027 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:canuck2usa&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=3128 status=0 QTime=1
+2021-04-07 18:08:47.164 INFO  (qtp952562199-17) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:canuck2usa&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=3128 status=0 QTime=1
+2021-04-07 18:08:47.307 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:canuck2usa&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=3128 status=0 QTime=1
+2021-04-07 18:08:52.599 INFO  (qtp952562199-17) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:canuck2usa&fl=username,tweettextcleaned&sort=tweetcreatedts+desc&rows=100&_=1617807895321} hits=3128 status=0 QTime=3
+2021-04-07 18:08:57.708 INFO  (qtp952562199-22) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla%0ausername:canuck2usa&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=3128 status=0 QTime=1
+2021-04-07 18:09:02.783 INFO  (qtp952562199-25) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=username:canuck2usa&fl=username,tweettextcleaned&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=2000 status=0 QTime=2
+2021-04-07 18:09:09.386 INFO  (qtp952562199-70) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=username:canuck2usa&fl=username,tweettextcleaned&sort=tweetcreatedts+desc&rows=100&_=1617807895321} hits=2000 status=0 QTime=1
+2021-04-07 18:09:39.724 INFO  (qtp952562199-25) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla&fl=username,tweettextcleaned&fq=username:canuck2usa&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=14 status=0 QTime=37
+2021-04-07 18:09:57.834 INFO  (qtp952562199-70) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:$tsla&fl=username,tweettextcleaned&fq=username:(canuck2usa,+SeekingAlpha)&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=24 status=0 QTime=10
+2021-04-07 18:10:14.681 INFO  (qtp952562199-25) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:spx&fl=username,tweettextcleaned&fq=username:(canuck2usa,+SeekingAlpha)&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=8 status=0 QTime=8
+2021-04-07 18:10:24.662 INFO  (qtp952562199-70) [c:tweets s:shard1 r:core_node2 x:tweets_shard1_replica_n1] o.a.s.c.S.Request [tweets_shard1_replica_n1]  webapp=/solr path=/select params={q=tweettextcleaned:+stock&fl=username,tweettextcleaned&fq=username:(canuck2usa,+SeekingAlpha)&sort=tweetcreatedts+asc&rows=100&_=1617807895321} hits=95 status=0 QTime=2

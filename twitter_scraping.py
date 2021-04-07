@@ -109,5 +109,6 @@ for username in usernames:
 to_csv_timestamp = datetime.today().strftime('%Y%m%d_%H%M%S')
 filename_csv =  'news_'+ to_csv_timestamp + '.csv'
 db_tweets.to_csv(filename_csv, index = False)
+print("File saved as: ", filename_csv)
 
                                    

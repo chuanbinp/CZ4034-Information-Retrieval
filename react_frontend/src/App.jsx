@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, CssBaseline, Container, AppBar, Toolbar, TextField, IconButton, Input, Box, Grid, Paper, Avatar, Checkbox, FormControl, InputLabel, Select, MenuItem, ListItemText } from '@material-ui/core';
+import { Typography, Link, CssBaseline, Container, AppBar, Toolbar, TextField, IconButton, Input, Box, Grid, Paper, Avatar, Checkbox, FormControl, InputLabel, Select, MenuItem, ListItemText, Button } from '@material-ui/core';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import ShowChartIcon from '@material-ui/icons/ShowChart';
 import SearchIcon from '@material-ui/icons/Search';
@@ -8,38 +8,10 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import RepeatIcon from '@material-ui/icons/Repeat';
 import grey from '@material-ui/core/colors/grey';
 
-const filter_sources = ['EliteOptions2', 'WarlusTrades', 'canuck2usa', 'OnlyGreenTrades', 'Ultra_Calls', 'MarketBeatCom', 'stockstobuy', 'TickerReport', 'AmericanBanking','SeekingAlpha', 'MarketRebels', 'TradeOnTheWire1'];
+const io = require('socket.io-client');
+const socket = io.connect('http://localhost:5000');
 
-const results = [
-  {
-    'username': 'chuanbin',
-    'tweettext': 'tweet1 content',
-    'tweetcreatedts':'<time now>',
-    'tweetfavcount':'5',
-    'tweetretweetcount': '2'
-  },
-  {
-    'username': 'phoechuanbin',
-    'tweettext': 'tweet2 content',
-    'tweetcreatedts':'<time +1>',
-    'tweetfavcount':'2',
-    'tweetretweetcount': '3'
-  },
-  {
-    'username': 'bin',
-    'tweettext': 'tweet3 content',
-    'tweetcreatedts':'<time +2>',
-    'tweetfavcount':'5',
-    'tweetretweetcount': '11'
-  },
-  {
-    'username': 'chuan',
-    'tweettext': 'tweet4 content',
-    'tweetcreatedts':'<time +3>',
-    'tweetfavcount':'8',
-    'tweetretweetcount': '1'
-  }
-]
+const filter_sources = ['EliteOptions2', 'WarlusTrades', 'canuck2usa', 'OnlyGreenTrades', 'Ultra_Calls', 'MarketBeatCom', 'stockstobuy', 'TickerReport', 'AmericanBanking','SeekingAlpha', 'MarketRebels', 'TradeOnTheWire1'];
 
 const useStyles = makeStyles((theme) => ({
   searchContainer:{
@@ -79,10 +51,36 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
 
-  // const componentRef = React.useRef();
-  const [filterSources, setfilterSources] = React.useState([]);
-  const [filterSortby, setfilterSortby] = React.useState([]);
-  const [filterSortusing, setfilterSortusing] = React.useState([]);
+  var searchTerm = React.useRef();
+  const [newTweetCount, setNewTweetCount] = React.useState("0");
+  const [enabledSortBy, setEnabledSortBy] = React.useState(true);
+  const [results, setResults] = React.useState([]);
+  const [filterSources, setfilterSources] = React.useState(filter_sources);
+  const [filterSortby, setfilterSortby] = React.useState("desc");
+  const [filterSortusing, setfilterSortusing] = React.useState("relevance");
+
+  
+
+  React.useEffect(() => {
+    socket.on('connect', function() {
+        socket.emit('join', {data: 'Client connected!', cid: socket.id});
+    });
+    socket.on('results', function(msg) {
+        setResults(msg.results)  
+    });
+    return () => {
+      // cleanup
+    }
+  }, [results])
+
+  React.useEffect(() => {
+    socket.on('new_tweets', function(msg) {
+      setNewTweetCount(msg.count)  
+    });
+    return () => {
+      // cleanup
+    }
+  }, [newTweetCount])
 
   const handleFilterSourcesChange = (event) => {
     setfilterSources(event.target.value);
@@ -94,10 +92,55 @@ function App() {
 
   const handleFilterSortusingChange = (event) => {
     setfilterSortusing(event.target.value);
+    if(event.target.value==="relevance"){
+      setEnabledSortBy(true);
+    } else{
+      setEnabledSortBy(false);
+    }
+  };
+
+  const handleRefreshPage = (event) => {
+    socket.emit('refresh_data',  {cid: socket.id});
+    //reset page
+    setNewTweetCount("0");
+    searchTerm.current.value = null;
+    setEnabledSortBy(true);
+    setfilterSources(filterSources);
+    setfilterSortby('desc');
+    setfilterSortusing('relevance');
+    
   };
 
   const handleSearchClick = (event) => {
-    // console.log(searchterm);
+    var st = searchTerm.current.value;
+    var f_src = filterSources;
+    var f_sortby = filterSortby;
+    var f_sortusing = filterSortusing;
+    if(st==="") return;
+
+    // console.log(st, f_src, f_sortby, f_sortusing);
+    var search_grid = {
+        'q':'',
+        'fq':'',
+    };
+    if(st){
+        search_grid['q'] += 'tweettextcleaned: '+st
+    }
+    if(f_src){
+        search_grid['fq'] += 'username: ('
+        for (var i=0; i<f_src.length; i++) {
+            search_grid['fq']+= f_src[i]+','
+        }
+        if(search_grid['fq'].slice(-1)==","){
+          search_grid['fq'] = search_grid['fq'].slice(0,-1);
+        }
+        search_grid['fq'] += ')'
+    }
+    search_grid['sort'] = f_sortusing+ ' ' + f_sortby;
+    
+    console.log(search_grid);
+    socket.emit('search', {search_params: search_grid, cid: socket.id});
+    console.log("sent");
   };
 
   return (
@@ -125,7 +168,7 @@ function App() {
           <Grid container item xs={10} justify='center'> 
 
             <Grid container item sm={11} xs={10} justify='center'> 
-              <TextField variant="outlined" label="Search for" color="secondary" fullWidth/>
+              <TextField inputRef={searchTerm} variant="outlined" label="Search for" color="secondary" fullWidth/>
             </Grid>
 
             <Grid container item sm={1} xs={2} justify='center'> 
@@ -155,9 +198,9 @@ function App() {
                     value={filterSortusing}
                     onChange={handleFilterSortusingChange}
                   >
-                    <MenuItem value={1}>Relevance</MenuItem>
-                    <MenuItem value={2}>Favourite Count</MenuItem>
-                    <MenuItem value={3}>Retweet Count</MenuItem>
+                    <MenuItem value={"relevance"}>Relevance</MenuItem>
+                    <MenuItem value={"tweetfavcount"}>Favourite Count</MenuItem>
+                    <MenuItem value={"tweetretweetcount"}>Retweet Count</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>
@@ -170,9 +213,10 @@ function App() {
                     // id="demo-simple-select"
                     value={filterSortby}
                     onChange={handleFilterSortbyChange}
+                    disabled={enabledSortBy} 
                   >
-                    <MenuItem value={1}>Ascending</MenuItem>
-                    <MenuItem value={2}>Descending</MenuItem>
+                    <MenuItem value={"asc"}>Ascending</MenuItem>
+                    <MenuItem value={"desc"}>Descending</MenuItem>
                   </Select>
                 </FormControl>
               </Grid>
@@ -206,18 +250,20 @@ function App() {
           </Box>
         </Grid>
           
-            
-          
-          
 
-
-          {/* <Button variant="outlined" align="center"><SearchIcon />Search Now</Button> */}
-        
       </Container>
       <Container align='center' className={classes.resultContainer} >
         <Box py={2}>
         <Grid container item lg={12} xs={12} justify="center">
           <Typography variant="h4" color="primary" align="center">Results</Typography>
+          
+        </Grid>
+        <Grid container item lg={12} xs={12} justify="center" style={{alignItems: "baseline" }}>
+          <Button variant="outlined" color="secondary" onClick={handleRefreshPage}>Refresh and Reset page</Button>
+          
+        </Grid>
+        <Grid container item lg={12} xs={12} justify="center" style={{alignItems: "baseline" }}>
+          <Typography variant="body1" color="secondary" align="center">{newTweetCount} new tweets.</Typography>
         </Grid>
         </Box>
         <Grid container item lg={6} xs={10}>
@@ -228,21 +274,25 @@ function App() {
                 <Grid container item xs={12}>
 
                   <Grid container item xs={3} sm={2} md={1}>
-                    <Avatar alt="Remy Sharp" src="https://picsum.photos/45/45" className={classes.avatar}/>
+                  <Link target="_blank" underline="none" href={"http://www.twitter.com/"+ result.username}>
+                    <Avatar alt={result.username} src={result.userpic} className={classes.avatar}/>
+                  </Link>
                   </Grid>
 
                   <Grid container item xs={9} sm={10} md={11}>
 
                     <Grid container item xs={12} style={{alignItems: "baseline" }}>
                       <Box mr={1}>
-                      <Typography variant="h6" color="textPrimary" >{result.username}</Typography>
+                      <Link target="_blank" href={"http://www.twitter.com/"+ result.username}>
+                        <Typography variant="h6" color="textPrimary" >{result.username}</Typography>
+                      </Link>
                       </Box>
                       <Typography variant="body2" color="textPrimary">{result.tweetcreatedts}</Typography>
                     </Grid>
 
                     <Box my={1}>
                       <Grid container item xs={12} >
-                        <Typography variant="body1" color="textPrimary" >{result.tweettext}</Typography>
+                        <Typography variant="body1" color="textPrimary" align="left">{result.tweettext}</Typography>
                       </Grid>
                     </Box>
                     
