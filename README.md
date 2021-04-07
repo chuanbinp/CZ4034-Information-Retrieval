@@ -44,12 +44,12 @@ This allows us to listen for new tweets from the 12 chosen accounts and update o
 6. Access *http://localhost:5000/* to see server in action :)  
 Refer to static/main.js to get reference code on how to call server 
   
-7. Frontend in progress...  
+7. Access ReactJS Frontend  
 ```
 cd react_frontend
 npm start
 ```
-Access *http://localhost:3000/* to see client. Currently frontend is done, just need to get data from server via socketio and server it up using useState and useEffect 
+Access *http://localhost:3000/* to see client. 
 
   
 ## Here are the functions of the 4 main files:
