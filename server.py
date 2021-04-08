@@ -4,6 +4,7 @@ from flask import Flask, render_template
 from flask_socketio import SocketIO, emit, join_room, leave_room
 import pysolr
 import json as js
+import pickle
 
 template_dir = os.getcwd()
 template_dir = os.path.join(template_dir, 'templates')
@@ -13,14 +14,20 @@ socketio = SocketIO(app, cors_allowed_origins="*")
 solr = pysolr.Solr('http://localhost:8983/solr/tweets/', always_commit=True, results_cls=dict)
 solr.ping()
 
-# new_tweet = False
-# new_tweet_count = 0
-new_tweet_count_dict = {}
+# MODEL_FILENAME = "saved_model_pickle.py"
 
+new_tweet_count_dict = {}
+# loaded_model = pickle.load(open(MODEL_FILENAME, 'rb'))
+
+def onTheFlyPredictor(results):
+    for doc in results['response']['docs']:
+        doc["financial_sentiment"] = loaded_model.predict(doc["tweettextcleaned"])
+    return results
 
 def getAllDataDesc():
     results = solr.search('*', sort='tweetcreatedts desc', rows=15)
     print("Successfully retrieved ", len(results['response']['docs']), "rows of data.")
+    # results = onTheFlyPredictor(results)
     return results
 
 def getData(params):

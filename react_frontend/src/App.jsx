@@ -161,7 +161,7 @@ function App() {
         <Box py={5} width={"100%"}>
           <Grid container item xs={12} justify='center'>  
             <Typography variant="h2" align="center" color="primary"> Stocks Twitter Feed </Typography>
-            <Typography variant="subtitle1" align="center" color="primary" gutterBottom> Get live stocks tweets Lorem ipsum dolor sit amet consectetur, adipisicing elit.</Typography>
+            <Typography variant="subtitle1" align="center" color="primary" gutterBottom> Get live stocks tweets from 12 twitter accounts. Search for your favourite stocks!</Typography>
           </Grid>
         </Box>
           

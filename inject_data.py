@@ -4,6 +4,8 @@ import csv
 import json
 import pandas as pd
 from numpy import nan
+import glob
+import os
 
 #Helper function to convert stringlist to list 
 def stringToList(string):
@@ -44,8 +46,10 @@ def getAllDataDesc():
     print("Successfully retrieved ", len(results), "rows of data from SOLR.")
     return results    
 
-#Define input file name
-CSV_FILEPATH = 'news_20210331_232029.csv'
+#Find latest csv data file and set as input file name
+cwd = os.getcwd()
+list_of_files = glob.glob(cwd+'/news*.csv') # * means all if need specific format then *.csv
+CSV_FILEPATH = max(list_of_files, key=os.path.getctime)
 
 #Connect to SOLR
 solr = pysolr.Solr('http://localhost:8983/solr/tweets/', always_commit=True)
