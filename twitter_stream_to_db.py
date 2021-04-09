@@ -141,7 +141,7 @@ l = StreamListener()
 stream = tweepy.Stream(auth, l, tweet_mode='extended')
 
 #Connect to SOLR
-solr = pysolr.Solr('http://localhost:8983/solr/tweets/', always_commit=True)
+solr = pysolr.Solr('http://localhost:8888/solr/new_core/', always_commit=True)
 solr.ping()
 
 #Connect to backend

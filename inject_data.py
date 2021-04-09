@@ -52,7 +52,7 @@ list_of_files = glob.glob(cwd+'/news*.csv') # * means all if need specific forma
 CSV_FILEPATH = max(list_of_files, key=os.path.getctime)
 
 #Connect to SOLR
-solr = pysolr.Solr('http://localhost:8983/solr/tweets/', always_commit=True)
+solr = pysolr.Solr('http://localhost:8888/solr/new_core/', always_commit=True)
 solr.ping()
 
 #Read in data to dictionary

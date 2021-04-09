@@ -34,7 +34,8 @@ def inject_data():
     os.system('start cmd /k "python inject_data.py"')
 
 def run_solr():
-    os.system('start cmd /k "cd ./solr-8.8.1/bin && solr start -c -p 8983 -s ../example/cloud/node1/solr && start http://localhost:8983/solr/#/"')
+    # os.system('start cmd /k "cd ./solr-8.8.1/bin && solr start -p 8888 -s ../example/cloud/node1/solr && start http://localhost:8983/solr/#/"')
+    os.system('start cmd /k "cd ./solr-8.8.1/bin && solr start -p 8888 && start http://localhost:8888/solr/#/"')
 
 def run_server():
     os.system('start cmd /k "python server.py')

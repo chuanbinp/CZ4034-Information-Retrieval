@@ -1,12 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Typography, Link, CssBaseline, Container, AppBar, Toolbar, TextField, IconButton, Input, Box, Grid, Paper, Avatar, Checkbox, FormControl, InputLabel, Select, MenuItem, ListItemText, Button } from '@material-ui/core';
+import { Typography, CircularProgress , Link, CssBaseline, Container, AppBar, Toolbar, TextField, IconButton, Input, Box, Grid, Paper, Avatar, Checkbox, FormControl, InputLabel, Select, MenuItem, ListItemText, Button } from '@material-ui/core';
 import MonetizationOnIcon from '@material-ui/icons/MonetizationOn';
 import ShowChartIcon from '@material-ui/icons/ShowChart';
 import SearchIcon from '@material-ui/icons/Search';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
 import RepeatIcon from '@material-ui/icons/Repeat';
+import TrendingUpIcon from '@material-ui/icons/TrendingUp';
+import TrendingDownIcon from '@material-ui/icons/TrendingDown';
 import grey from '@material-ui/core/colors/grey';
+import PropTypes from 'prop-types';
 
 const io = require('socket.io-client');
 const socket = io.connect('http://localhost:5000');
@@ -52,6 +55,8 @@ function App() {
   const classes = useStyles();
 
   var searchTerm = React.useRef();
+  const [hideSpellingSuggestions, setHideSpellingSuggestions] = React.useState(true);
+  const [spellingSuggestions, setSpellingSuggestions] = React.useState([]);
   const [newTweetCount, setNewTweetCount] = React.useState("0");
   const [enabledSortBy, setEnabledSortBy] = React.useState(true);
   const [results, setResults] = React.useState([]);
@@ -59,28 +64,51 @@ function App() {
   const [filterSortby, setfilterSortby] = React.useState("desc");
   const [filterSortusing, setfilterSortusing] = React.useState("relevance");
 
-  
+  socket.on('connect', function() {
+      socket.emit('join', {data: 'Client connected!', cid: socket.id});
+  });
+  socket.on('results', function(msg) {
+      setResults(msg.results);
+  });
+  socket.on('spelling', function(msg) {
+    setHideSpellingSuggestions(msg.hide_spelling_suggestion);
+    setSpellingSuggestions(msg.spelling_suggestions);
+    // console.log(hideSpellingSuggestions, spellingSuggestions)
+  });
+  socket.on('new_tweets', function(msg) {
+    setNewTweetCount(msg.count)  
+  });
+  // React.useEffect(() => {
+  //   socket.on('connect', function() {
+  //       socket.emit('join', {data: 'Client connected!', cid: socket.id});
+  //   });
+  //   socket.on('results', function(msg) {
+  //       setResults(msg.results); 
+  //   });
+  //   return () => {
+  //     // cleanup
+  //   }
+  // }, [results])
 
-  React.useEffect(() => {
-    socket.on('connect', function() {
-        socket.emit('join', {data: 'Client connected!', cid: socket.id});
-    });
-    socket.on('results', function(msg) {
-        setResults(msg.results)  
-    });
-    return () => {
-      // cleanup
-    }
-  }, [results])
+  // React.useEffect(() => {
+  //   socket.on('spelling', function(msg) {
+  //       setShowSpellingSuggestions(msg.display_spelling_suggestion);
+  //       setSpellingSuggestions(msg.spelling_suggestions);
+  //       console.log(msg)
+  //   });
+  //   return () => {
+  //     // cleanup
+  //   }
+  // }, [spellingSuggestions, showSpellingSuggestions])
 
-  React.useEffect(() => {
-    socket.on('new_tweets', function(msg) {
-      setNewTweetCount(msg.count)  
-    });
-    return () => {
-      // cleanup
-    }
-  }, [newTweetCount])
+  // React.useEffect(() => {
+  //   socket.on('new_tweets', function(msg) {
+  //     setNewTweetCount(msg.count)  
+  //   });
+  //   return () => {
+  //     // cleanup
+  //   }
+  // }, [newTweetCount])
 
   const handleFilterSourcesChange = (event) => {
     setfilterSources(event.target.value);
@@ -108,6 +136,8 @@ function App() {
     setfilterSources(filterSources);
     setfilterSortby('desc');
     setfilterSortusing('relevance');
+    setHideSpellingSuggestions(true);
+    setSpellingSuggestions([]);
     
   };
 
@@ -131,7 +161,7 @@ function App() {
         for (var i=0; i<f_src.length; i++) {
             search_grid['fq']+= f_src[i]+','
         }
-        if(search_grid['fq'].slice(-1)==","){
+        if(search_grid['fq'].slice(-1)===","){
           search_grid['fq'] = search_grid['fq'].slice(0,-1);
         }
         search_grid['fq'] += ')'
@@ -143,6 +173,95 @@ function App() {
     console.log("sent");
   };
 
+  const handleSuggestionClick = (event) => {
+    var st = event.currentTarget.value;
+    var f_src = filterSources;
+    var f_sortby = filterSortby;
+    var f_sortusing = filterSortusing;
+    if(st==="") return;
+
+    // console.log(st, f_src, f_sortby, f_sortusing);
+    var search_grid = {
+        'q':'',
+        'fq':'',
+    };
+    if(st){
+        search_grid['q'] += 'tweettextcleaned: '+st
+    }
+    if(f_src){
+        search_grid['fq'] += 'username: ('
+        for (var i=0; i<f_src.length; i++) {
+            search_grid['fq']+= f_src[i]+','
+        }
+        if(search_grid['fq'].slice(-1)===","){
+          search_grid['fq'] = search_grid['fq'].slice(0,-1);
+        }
+        search_grid['fq'] += ')'
+    }
+    search_grid['sort'] = f_sortusing+ ' ' + f_sortby;
+    
+    console.log(search_grid);
+    socket.emit('search', {search_params: search_grid, cid: socket.id});
+    console.log("sent");
+
+    searchTerm.current.value = st;
+    setHideSpellingSuggestions(true);
+    setSpellingSuggestions([]);
+
+  }
+
+  function CircularProgressWithLabel(props) {
+    return (
+      <Box position="relative" display="inline-flex">
+        <CircularProgress variant="determinate" {...props} />
+        <Box
+          top={0}
+          left={0}
+          bottom={0}
+          right={0}
+          position="absolute"
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Typography variant="caption" component="div" color={props.color}>{`${Math.round(
+            props.value,
+          )}%`}</Typography>
+        </Box>
+      </Box>
+    );
+  }
+  
+  CircularProgressWithLabel.propTypes = {
+    /**
+     * The value of the progress indicator for the determinate variant.
+     * Value between 0 and 100.
+     */
+    value: PropTypes.number.isRequired,
+    color: PropTypes.string.isRequired
+  };
+
+  function SpellingSuggestion(props) {
+    return (
+      <Grid container item lg={12} xs={12} justify="center" hidden={props.display} >
+        <Typography variant="subtitle2" color="textPrimary" hidden={props.display}>Did you mean: </Typography>
+        {
+          props.suggestions.map(suggestion => (
+            <Button variant="contained" onClick={handleSuggestionClick} value={suggestion} key={suggestion}>{suggestion}</Button>
+          ))
+        }
+      </Grid>
+    );
+  }
+
+  SpellingSuggestion.propTypes = {
+    /**
+     * The value of the progress indicator for the determinate variant.
+     * Value between 0 and 100.
+     */
+    display: PropTypes.bool.isRequired,
+    suggestions: PropTypes.array.isRequired
+  };
   return (
     <>
       <CssBaseline />
@@ -266,16 +385,28 @@ function App() {
           <Typography variant="body1" color="secondary" align="center">{newTweetCount} new tweets.</Typography>
         </Grid>
         </Box>
+        <SpellingSuggestion display={hideSpellingSuggestions} suggestions={spellingSuggestions}/>
+        {/* <Grid container item lg={12} xs={12} justify="center" display={showSpellingSuggestions}>
+        {
+          if(showSpellingSuggestions){
+            results.spelling_suggestions.map(suggestion => (
+              <Button variant="contained">{suggestion}</Button>
+              ))
+          }
+          
+        }
+        </Grid> */}
+
         <Grid container item lg={6} xs={10}>
         {
           results.map(result => (
             // <Box py={1}>
-              <Paper className={classes.papertweet}>
+              <Paper className={classes.papertweet} key={result.id}>
                 <Grid container item xs={12}>
 
                   <Grid container item xs={3} sm={2} md={1}>
                   <Link target="_blank" underline="none" href={"http://www.twitter.com/"+ result.username}>
-                    <Avatar alt={result.username} src={result.userpic} className={classes.avatar}/>
+                    <Avatar alt={result.username[0]} src={result.userpic[0]} className={classes.avatar}/>
                   </Link>
                   </Grid>
 
@@ -287,7 +418,7 @@ function App() {
                         <Typography variant="h6" color="textPrimary" >{result.username}</Typography>
                       </Link>
                       </Box>
-                      <Typography variant="body2" color="textPrimary">{result.tweetcreatedts}</Typography>
+                      <Typography variant="body2" color="textPrimary">{new Date(result.tweetcreatedts).toLocaleDateString('en-SG', { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric'})}</Typography>
                     </Grid>
 
                     <Box my={1}>
@@ -297,12 +428,29 @@ function App() {
                     </Box>
                     
                     <Grid container item xs={12} style={{alignItems: "center" }}>
-                        <StarBorderIcon />
-                        <Box mr={2}>
-                        <Typography variant="subtitle2" color="textPrimary">{result.tweetfavcount}</Typography>
-                        </Box>
-                        <RepeatIcon />
-                        <Typography variant="subtitle2" color="textPrimary">{result.tweetretweetcount}</Typography>
+                        <Grid container item xs={11} >
+                          <StarBorderIcon />
+                          <Box mr={2}>
+                            <Typography variant="subtitle2" color="textPrimary">{result.tweetfavcount}</Typography>
+                          </Box>
+                          <RepeatIcon />
+                          <Box mr={2}>
+                            <Typography variant="subtitle2" color="textPrimary">{result.tweetretweetcount}</Typography>
+                          </Box>
+                          
+                        </Grid>
+                        <Grid container item xs={1}>
+                            <Box float="right">
+                            <Grid container item xs={12}>
+                                {result.financial_sentiment==="bull" ?<TrendingUpIcon fontSize="small" color="primary"/>:<TrendingDownIcon fontSize="small" color="secondary"/>}
+                                <Typography variant="caption" color={result.financial_sentiment==="bull" ? 'primary' : 'secondary'}>{result.financial_sentiment}</Typography> 
+                            </Grid>
+                            <Grid container item xs={12}>  
+                              <CircularProgressWithLabel value={result.financial_sentiment_score*100} color={result.financial_sentiment==="bull" ? 'primary' : 'secondary'}/>
+                            </Grid>
+                            </Box>
+
+                        </Grid>
                     </Grid>
 
                   </Grid>
