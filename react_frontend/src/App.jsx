@@ -148,7 +148,6 @@ function App() {
     var f_sortusing = filterSortusing;
     if(st==="") return;
 
-    // console.log(st, f_src, f_sortby, f_sortusing);
     var search_grid = {
         'q':'',
         'fq':'',
@@ -180,7 +179,6 @@ function App() {
     var f_sortusing = filterSortusing;
     if(st==="") return;
 
-    // console.log(st, f_src, f_sortby, f_sortusing);
     var search_grid = {
         'q':'',
         'fq':'',
@@ -312,8 +310,6 @@ function App() {
                 <FormControl className={classes.formControl}>
                   <InputLabel>Sort using</InputLabel>
                   <Select
-                    // labelId="demo-simple-select-label"
-                    // id="demo-simple-select"
                     value={filterSortusing}
                     onChange={handleFilterSortusingChange}
                   >
@@ -328,8 +324,6 @@ function App() {
                 <FormControl className={classes.formControl}>
                   <InputLabel>Sort by</InputLabel>
                   <Select
-                    // labelId="demo-simple-select-label"
-                    // id="demo-simple-select"
                     value={filterSortby}
                     onChange={handleFilterSortbyChange}
                     disabled={enabledSortBy} 
@@ -344,14 +338,11 @@ function App() {
                 <FormControl className={classes.formControl}>
                   <InputLabel>Filter Sources</InputLabel>
                   <Select
-                    // labelId="demo-mutiple-checkbox-label"
-                    // id="demo-mutiple-checkbox"
                     multiple
                     value={filterSources}
                     onChange={handleFilterSourcesChange}
                     input={<Input />}
                     renderValue={(selected) => selected.join(', ')}
-                    // MenuProps={MenuProps}
                     
                   >
                     {filter_sources.map((name) => (
@@ -386,16 +377,6 @@ function App() {
         </Grid>
         </Box>
         <SpellingSuggestion display={hideSpellingSuggestions} suggestions={spellingSuggestions}/>
-        {/* <Grid container item lg={12} xs={12} justify="center" display={showSpellingSuggestions}>
-        {
-          if(showSpellingSuggestions){
-            results.spelling_suggestions.map(suggestion => (
-              <Button variant="contained">{suggestion}</Button>
-              ))
-          }
-          
-        }
-        </Grid> */}
 
         <Grid container item lg={6} xs={10}>
         {

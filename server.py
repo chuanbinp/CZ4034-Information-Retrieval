@@ -26,6 +26,7 @@ solr = pysolr.Solr('http://localhost:8888/solr/new_core/', always_commit=True, r
 solr.ping()
 
 MODEL_FILENAME = "pickle_model.pkl"
+MODEL_FILENAME_V2 = "pickle_model_ver2.pkl"
 
 new_tweet_count_dict = {}
 loaded_model = pickle.load(open(MODEL_FILENAME, 'rb'))
@@ -58,7 +59,6 @@ def modelPreprocessing(input):
     stemmer = PorterStemmer()
     output = [stemmer.stem(y) for y in output]
     output = [str(" ".join(x for x in output))[3:-3]]
-    # print(output)
     text_tf= tf.transform(output)
 
     return text_tf
@@ -66,11 +66,14 @@ def modelPreprocessing(input):
 def onTheFlyPredictor(results):
     for doc in results['response']['docs']:
         output = modelPreprocessing(doc["tweettextcleaned"])
-        doc["financial_sentiment_score"] = float(loaded_model.predict_proba(output)[0][1])
+        try:
+            doc["financial_sentiment_score"] = float(loaded_model.predict_proba(output)[0][1])
+        except:
+            loaded_model = pickle.load(open(MODEL_FILENAME_V2, 'rb'))
+            doc["financial_sentiment_score"] = float(loaded_model.predict_proba(output)[0][1])
+
         doc["financial_sentiment"] = "bear" if (int(loaded_model.predict(output)[0]) == 0) else "bull"
-        # print(doc["financial_sentiment_score"])
-        # print(doc["financial_sentiment"])
-        # print()
+
     return results
 
 def getAllDataDesc():
@@ -79,7 +82,7 @@ def getAllDataDesc():
     results = onTheFlyPredictor(results)
     results['response']['hide_spelling_suggestion'] = True
     results['response']['spelling_suggestions'] = []
-    # print(results)
+
     return results
 
 def getData(params):
@@ -121,14 +124,8 @@ def getData(params):
 
 @app.route("/")
 def index():
-    #return
     print(template_dir)
     return render_template('index.html')
-
-# @socketio.on('client_connect')
-# def client_connect(json):
-#     print('Client connected, cid: ' + str(json['cid']))
-#     new_tweet_count_dict[json['cid']] = 0
 
 @socketio.on('join')
 def on_join(json):
@@ -138,8 +135,6 @@ def on_join(json):
     print('Client connected, cid: ' + str(json['cid']))
     print(new_tweet_count_dict)
     results = getAllDataDesc()
-    # print(results['response']['docs'])
-    # results = js.dumps(getAllDataDesc())
     socketio.emit('results', {'results': results['response']['docs']}, room = json['cid']) #emit to specific users
 
 
@@ -156,19 +151,14 @@ def get_tweets(json):
     print('received json: ' + str(json))
     print(new_tweet_count_dict)
     results = getData(json['search_params'])
-    #apply sentiment
     socketio.emit('results', {'results': results['response']['docs']}, room = json['cid']) #emit to specific users
-    # print(results['response']['hide_spelling_suggestion'], results['response']['spelling_suggestions'])
     socketio.emit('spelling', {'spelling_suggestions': results['response']['spelling_suggestions'], 'hide_spelling_suggestion':results['response']['hide_spelling_suggestion']}, room = json['cid'])
 
 @socketio.on('refresh_data')
 def refresh_data(json):
-    # for key, val in new_tweet_count_dict.items():
-    #     if(key == json['cid']):
     new_tweet_count_dict[json['cid']] = 0
     results = getAllDataDesc()
     socketio.emit('results', {'results': results['response']['docs']}, room = json['cid']) #emit to specific users
-    # print(results['response']['hide_spelling_suggestion'], results['response']['spelling_suggestions'])
     socketio.emit('spelling', {'spelling_suggestions': results['response']['spelling_suggestions'], 'hide_spelling_suggestion':results['response']['hide_spelling_suggestion']}, room = json['cid'])
 
 @socketio.on('streamer_new_tweet')

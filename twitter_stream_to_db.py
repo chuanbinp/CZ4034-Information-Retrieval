@@ -147,10 +147,6 @@ solr.ping()
 #Connect to backend
 sio = socketio.Client()
 sio.connect('http://localhost:5000')
-# @sio.event
-# def connect():
-#     print("Connected with backend server.")
-#     sio.emit('client_connect', {'data': 'Client connected!'})
 
 #Start listening
 stream.filter(follow=['372322178','1018324467758465024', '748611168168644612', '430841130', '779131850023378944', '89517375', '68559732', '37564410', '1979190776', '61661638', '23059499', '817007725666242561', '51912109'])
