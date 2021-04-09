@@ -1,5 +1,5 @@
+nltk.download('stopwords')
 import os
-# import time
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit, join_room, leave_room
 import pysolr
@@ -14,7 +14,7 @@ from urllib.parse import urlencode
 import requests
 import pandas as pd
 
-nltk.download('stopwords')
+
 
 template_dir = os.getcwd()
 template_dir = os.path.join(template_dir, 'templates')
