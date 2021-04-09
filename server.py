@@ -14,6 +14,7 @@ from urllib.parse import urlencode
 import requests
 import pandas as pd
 
+nltk.download('stopwords')
 
 template_dir = os.getcwd()
 template_dir = os.path.join(template_dir, 'templates')
