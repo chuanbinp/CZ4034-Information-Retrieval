@@ -1,4 +1,4 @@
-nltk.download('stopwords')
+
 import os
 from flask import Flask, render_template
 from flask_socketio import SocketIO, emit, join_room, leave_room
@@ -6,6 +6,7 @@ import pysolr
 import json as js
 import pickle
 import nltk
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 from nltk import word_tokenize, sent_tokenize
