@@ -104,7 +104,7 @@ Pre-populate our solr non-SQL database with our ~23k data. It will read in the l
 
 ### twitter_stream_to_db.py
 Running this script will allow us to listen to the above-mentioned 5 twitter pages so that our **DB is in REALTIME**.  
-<img src="https://user-images.githubusercontent.com/35805397/114295201-36eb4800-9ad6-11eb-95de-c31a744f11d7.png" width="60%" />  
+<img src="https://user-images.githubusercontent.com/35805397/114295670-3f914d80-9ad9-11eb-9176-c4d2e54733ab.png" width="60%" />  
 And so when there is a new tweet, it will:  
 a. Add that tweet to our db, then  
 b. Delete the oldest tweet based on tweetcreatedts  
@@ -141,7 +141,7 @@ Users can:
 5. View the financial sentiment classification of each tweet on the fly  
 6. Be informed and obtain real-time tweets as any of the 12 pages posts them  
 7. Get spell-checking suggestions on search terms  
-
-<img src="https://user-images.githubusercontent.com/35805397/114295157-fab7e780-9ad5-11eb-9a95-e35f6ff769cc.png" width="70%" />
+  
+<img src="https://user-images.githubusercontent.com/35805397/114295684-5637a480-9ad9-11eb-808a-1188d65b1184.png" width="70%" />
 
 
