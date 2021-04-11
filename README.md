@@ -5,6 +5,7 @@
 1. Install dependencies  
 ```
 pip install -r requirements.txt
+cd react_frontend
 npm install
 ```
   
