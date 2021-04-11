@@ -87,24 +87,27 @@ Access *http://localhost:3000/* to use client.
   
 ## Here are the functions of the 5 main components:  
 <img src="https://user-images.githubusercontent.com/35805397/114295002-f5a66880-9ad4-11eb-8386-afe2e1ad78d3.png" width="75%" />
-
+  
 ### twitter_scraping.py
 Scrape 2000 documents of data from each of our designated 12 sources to come up with a total of 23,326 documents. (OnlyGreenTrades only has 1,326)
 `['EliteOptions2', 'WarlusTrades', 'canuck2usa', 'OnlyGreenTrades', 'Ultra_Calls', 'MarketBeatCom', 'stockstobuy', 'TickerReport', 'AmericanBanking','SeekingAlpha', 'MarketRebels', 'TradeOnTheWire1']`
-
+  
 <img src="https://user-images.githubusercontent.com/35805397/114295129-ccd2a300-9ad5-11eb-830e-522a14156040.png" width="60%" />
   
 Output file will follow the naming convention:  
 `news_<%Y%m%d_%H%M%S>.csv` *where <> represents the datetime when it was scraped*  
   
 ### inject_data.py
-Pre-populate our solr non-SQL database with our ~23k data. It will read in the latest csv file based on its date modified.
+Pre-populate our solr non-SQL database with our ~23k data. It will read in the latest csv file based on its date modified.  
+  
 <img src="https://user-images.githubusercontent.com/35805397/114295144-e673ea80-9ad5-11eb-9d4f-0c6d6591b5c7.png" width="60%" />
-
+  
 
 ### twitter_stream_to_db.py
 Running this script will allow us to listen to the above-mentioned 5 twitter pages so that our **DB is in REALTIME**.  
+  
 <img src="https://user-images.githubusercontent.com/35805397/114295670-3f914d80-9ad9-11eb-9176-c4d2e54733ab.png" width="60%" />  
+  
 And so when there is a new tweet, it will:  
 a. Add that tweet to our db, then  
 b. Delete the oldest tweet based on tweetcreatedts  
