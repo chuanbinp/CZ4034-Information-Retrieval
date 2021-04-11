@@ -64,6 +64,7 @@ def modelPreprocessing(input):
     return text_tf
 
 def onTheFlyPredictor(results):
+    global loaded_model
     for doc in results['response']['docs']:
         output = modelPreprocessing(doc["tweettextcleaned"])
         try:
