@@ -1,4 +1,7 @@
 # CZ4034 Information Retrieval
+### Demo Video (Click on image)
+[![Watch the demo](https://img.youtube.com/vi/RUqkImoPsbg/maxresdefault.jpg)](https://youtu.be/RUqkImoPsbg)
+### Demo Web Client Screenshot
 <img src="https://user-images.githubusercontent.com/35805397/114295444-e248cc80-9ad7-11eb-817e-c015b3a19467.png" width="50%"/>  
 
 ## Quick Start GUI  
